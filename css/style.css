@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+:root{
+	--main-color:#DA2C32;
+	--light-color:#666;
+	--light-bg:#eee;
+	--white:#fff;
+	--black:#303030;
+	--border:.1rem solid var(--light-color);
+	--box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+}
+
+*::selection{
+	background-color:var(--main-color);
+	color:var(--white);
+}
+*::~webkit-scrollbar{
+	height: .5rem;
+	width: 1rem;
+}
+*::~webkit-scrollbar-track{
+	background-color: transparent;
+}
+*::~webkit-scrollbar-thumb{
+	background-color: var(--main-color);
+}
+html{
+	overflow-x:hidden;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top:10rem;
+}
+body{
+	background-color:var(--light-bg);
+}
+section{
+   padding: 3rem 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+.btn,
+.inline-btn{
+	padding: 1rem 3rem;
+	cursor: pointer;
+	font-size: 1.8rem;
+	color:var(--white);
+	background-color: var(--main-color);
+	text-align: center;
+	text-transform: capitalize;
+	margin-top: 1rem;
+}
+.btn{
+	width: 100%;
+	display: block;
+}
+.inline-btn{
+	display: inline-block;
+}
+.btn:hover,
+.inline-btn:hover{
+	background-color: var(--black);
+}
+
+.header{
+	position: sticky;
+	top: 0;
+	left: 0;right: 0;
+	z-index: 1000;
+	box-shadow: var(--box-shadow);
+}
+
+#menu-btn{
+	font-size: 2.5rem;
+	color: var(--black);
+	display: none;
+}
+
+.header .nav-1{
+	background-color: var(--black);
+}
+
+.header .nav-2{
+	background-color: var(--white);
+}
+
+.header .nav-1 .flex{
+   padding-top:1rem;
+   padding-bottom: 1rem;
+}
+
+
+.header .nav-2 .flex{
+   padding-top:1rem;
+   padding-bottom:0;
+}
+
+.header .nav .flex{
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+}
+.header .nav .flex .logo{
+	font-size: 2rem;
+	color: var(--white);
+}
+.header .nav .flex .logo i{
+	margin-right:.7rem;
+	color: var(--main-color);
+}
+
+.header .nav .flex ul{
+	list-style: none;
+}
+.header .nav .flex ul li{
+	float: left;
+	position: relative;
+}
+
+.header .nav .flex ul li a{
+    display: block;
+    padding: 1.2rem 2rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.header .nav .flex ul li a i{
+    margin-left: .8rem;
+}
+.header .nav .flex ul li a:hover{
+	background-color: var(--main-color);
+	color: var(--white);
+}
+
+
+.header .nav .flex ul li ul{
+	position: absolute;
+	left: 0;
+	width: 17rem;
+}
+
+
+.header .nav .flex ul li ul li{
+	width: 100%;
+}
+.header .nav .flex ul li ul li a{
+	display: none;
+}
+
+.header .nav .flex ul li:hover ul li a{
+	display: block;
+}
+
+.form-container form{
+  max-width: 50rem;
+  margin: 0 auto;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+.form-container form h3{
+	font-size: 2.5rem;
+	color:var(--black);
+	padding-bottom: 1rem;
+	text-transform: capitalize;
+}
+.form-container form .box{
+	width: 100%;
+	padding: 1.4rem;
+	font-size: 1.8rem;
+	color: var(--black);
+	border: var(--border);
+    margin: 1rem 0;
+    background-color:var(--light-bg);
+}
+
+.form-container form p{
+	padding: 1rem 0;
+	font-size: 1.8rem;
+	color: var(--light-color);
+}
+.form-container form p a{
+	color: var(--main-color);
+}
+.form-container form a:hover{
+	text-decoration: underline;
+}
+
+
+
+/*post property css start*/
+.property-from form{
+	background-color: var(--white);
+	box-shadow: var(--box-shadow);
+	padding: 2rem;
+}
+.property-from form h3{
+	padding-bottom: 1rem;
+	text-align: center;
+	font-size: 3rem;
+	color: var(--black);
+	text-transform: capitalize;
+}
+.property-from form .checkbox{
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.property-from form .checkbox input[type="checkbox"]{
+	margin-right: 1rem;
+	cursor: pointer;
+}
+.property-from form .flex{
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 1.5rem;
+}
+.property-from form .box{
+	flex: 1 1 40rem;
+}
+.property-from form .input{
+	width: 100%;
+	border:var(--border);
+	padding: 1.4rem;
+	margin: 1rem 0;
+	font-size: 1.8rem;
+	color: var(--black);
+}
+
+.property-from form p{
+	padding-top: 1rem;
+	font-size: 1.6rem;
+	color: var(--light-color);
+}
+.property-from form p span{
+	color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+	background-color: var(--black);
+
+}
+.footer .flex {
+   display: flex;
+   flex-wrap:wrap;
+   gap: 2rem;
+   justify-content: space-between;
+}
+.footer .flex .box{
+	flex: 1 1 30rem;
+}
+
+.footer .flex .box a{
+	display: block;
+	font-size: 1.8rem;
+	padding: 1rem 0;
+}
+.footer .flex .box a i{
+	color: var(--main-color);
+}
+.footer .flex .box a span{
+	color: var(--white);
+}
+.footer .flex .box a:hover span{
+   color: var(--main-color);
+   text-decoration: underline;
+}
+.footer .flex .box a i{
+	margin-left: 1rem;
+}
+.footer .flex .box:first-child a i{
+	margin-right: 1rem;
+}
+.footer .flex .box:nth-child(2){
+	text-align: center;
+}
+.footer .flex .box:last-child{
+	text-align: right;
+}
+.footer .credit {
+	padding: 3rem 2rem;
+	font-size: 2rem;
+	color: var(--white);
+	margin-top:3rem;
+	border-top: var(--border);
+	text-align: center;
+}
+.footer span{
+	color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media(max-width:991px){
+	html{
+       font-size: 55%;
+	}
+}
+
+
+@media(max-width:768px){
+	#menu-btn{
+		display:inline-block;
+	}
+	.header .nav .menu{
+		position: absolute;
+		top: 99%;left: 0;right: 0;
+		background: var(--white);
+		border-top: var(--border);
+		z-index: 10;
+		transform: .2s linear;
+		clip-path: polygon(0 0,100% 0,0 0);
+	}
+	.header .nav .menu.active{
+		clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+	}
+	.header .nav .menu ul li{
+		position: relative;
+		width: 100%;
+	}
+	.header .nav .menu ul li ul{
+		position: relative;
+		width: 100%;
+	}
+	.header .nav .menu ul li ul li a{
+		padding-left:4rem;
+		background-color:var(--black);
+		color: var(--white);
+	}
+}
+
+
+
+@media(max-width:450px){
+	html{
+       font-size: 50%;
+	}
+}
+
