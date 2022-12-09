@@ -27,6 +27,7 @@
       $age=$_POST['age'];
       $total_floors=$_POST['total_floor'];
       $room_floors=$_POST['room_floor'];
+      $loan=$_POST['loan'];
       $description=$_POST['description'];
 
 
@@ -189,8 +190,8 @@
       if($image_01_size > 2000000){
          $warning_msg[]='image size is too large!';
       }else{
-        $post_property=$conn->prepare("INSERT INTO `property`(id,user_id,property_name,adress, price ,type, offer, statufurnished, bhk, deposite, bedroom, bathroom, balcony, carpet, age, total_floors, room_floors, loan , lifsecurity_guard,play_ground,garden, water_supply, power_backup, parking_area,gym, shopping_mall,hospital, schoolmarket_area, image_01,image_02,image_03,image_04, image_05, description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)  ");
-        $post_property->execute([$id,$user_id,$property_name,$property_adress,$property_price,$type,$offer,$statusfurnished_status,$bhk,$property_deposite,$bedrooms,$bathrooms,$balcony,$carpet,$age,$total_floors,$room_floors,$loa,$lift,$security_guard,$play_ground,$garden,$water_supply,$power_backup,$parking_area,$gym,$shopping_mall,$hospitalschool,$market_area,$rename_image_01,$rename_image_02,$rename_image_03,$rename_image_04,$rename_image_05,$descripti]);
+        $post_property=$conn->prepare("INSERT INTO `property`(id,user_id,property_name,adress, price ,type, offer, status,furnished, bhk, deposite, bedroom, bathroom, balcony, carpet, age, total_floors, room_floors, loan , lift , security_guard,play_ground,garden, water_supply, power_backup, parking_area,gym, shopping_mall,hospital, school,market_area, image_01,image_02,image_03,image_04, image_05, description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)  ");
+        $post_property->execute([$property_id,$user_id,$property_name,$property_adress,$property_price,$type,$offer,$status,$furnished_status,$bhk,$property_deposite,$bedrooms,$bathrooms,$balcony,$carpet,$age,$total_floors,$room_floors,$loan,$lift,$security_guard,$play_ground,$garden,$water_supply,$power_backup,$parking_area,$gym,$shopping_mall,$hospital,$school,$market_area,$rename_image_01,$rename_image_02,$rename_image_03,$rename_image_04,$rename_image_05,$description]);
         move_uploaded_file($image_01_tmp_name,$image_01_folder);
         $success_msg[]='sucessfully property information posted!';
       }
