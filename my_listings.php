@@ -6,6 +6,7 @@
   	   $user_id=$_COOKIE['user_id'];
   }else{
   	$user_id='';
+    header('location:login.php');
   }
 ?>
 <!DOCTYPE html>
@@ -24,7 +25,70 @@
     <?php include 'componets/user_header.php'; ?>
     <!-- header section end -->
 
+   <!-----my listing section start----->
 
+      <section class="my-listings">
+        <h1 class="heading">my listings</h1>
+
+        <div class="box-container">
+
+        <?php
+          $select_listsing=$conn->prepare("SELECT * FROM `property` WHERE user_id = ? ORDER BY date DESC");
+          $select_listsing->execute([$user_id]);
+          if($select_listsing->rowCount() > 0){
+             while($fetch_listing =$select_listsing->fetch(PDO::FETCH_ASSOC)){
+               $listing_id=$fetch_listing['id'];
+               
+               if(!empty($fetch_listing['image_02'])){
+                  $image_02=1;
+               }else{
+                 $image_02=0;
+               }
+               if(!empty($fetch_listing['image_03'])){
+                $image_03=1;
+               }else{
+               $image_03=0;
+               }
+               if(!empty($fetch_listing['image_04'])){
+                $image_04=1;
+               }else{
+                $image_04=0;
+               }
+               if(!empty($fetch_listing['image_05'])){
+                $image_05=1;
+               }else{
+               $image_05=0;
+               }
+               $total_images=(1+$image_02+$image_03+$image_04+$image_05);
+        ?>
+        <form action=""  method="post" class="box">
+           <input type="hidden" name="property_id" value="<?= $listing_id?>">
+           <div class="thumb">
+             <p><i class="fas fa-image"></i><span><?= $total_images; ?></span></p>
+             <img src="uploaded_files/<?= $fetch_listing['image_01']; ?>" alt="">
+           </div>
+           <p class="price"><i class="fas fa-indian-rupee-sign"></i><?= $fetch_listing['price']; ?>/-</p>
+           <h3 class="name"><?= $fetch_listing['property_name'];  ?></h3>
+           <p class="adress"><i class="fas fa-map-marker-alt"></i><?= $fetch_listing['adress']; ?></p>
+            <div class="flex-btn">
+               <a href="update_property.php?get_id=<?= $listing_id; ?>" class="btn">update</a>
+               <input type="submit" name="delete" value="delete" class="btn" onclick="return confirm('delete this listing?')">
+            </div>
+            <a href="view_property.php?get_id=<?= $listing_id; ?>" class="btn">view property</a>
+        </form>
+
+         <?php
+             }
+            }else{
+                echo '<p class="empty">no listings found!</p>';
+            }
+         ?>
+
+
+        </div>
+
+      </section>
+   <!----my listing section end-------->
 
 
 
